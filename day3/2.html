@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成笑话</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .content {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label for="nameInput">请输入一个名字：</label>
+    <input type="text" id="nameInput" class="text1">
+    <button type="button" id="button1" class="generate">点击生成一个笑话</button>
+    <div class="content"></div>
+    <script>
+        var p = document.querySelector('.content');
+        var nameInput = document.getElementById('nameInput');
+        var button = document.getElementById('button1');
+
+        button.addEventListener('click', generateJoke);
+
+        function generateJoke() {
+            var mingzi = ['张三', '李四', '王五', '老六', '老宣'];
+            var weizhi = ['超市', '厕所', '寝室', '教室', '商场'];
+            var xiaohua = ['变成了一道光', '变成了奥特曼', '大喊奥利给', '在学狗叫', '在地上爬'];
+            var sourceUser = nameInput.value || "小黄";
+            var wd = Math.floor(Math.random() * 10);
+            console.log('随机数=' + wd);
+            var joke = `今天气温${Math.floor(Math.random() * 30)}摄氏度，${mingzi[Math.floor(Math.random() * mingzi.length)]}出门散步，当走到${weizhi[Math.floor(Math.random() * weizhi.length)]}门口，突然就${xiaohua[Math.floor(Math.random() * xiaohua.length)]}，人们都惊呆了，${sourceUser}全程目睹没有慌张，因为${mingzi[Math.floor(Math.random() * mingzi.length)]}是一个憨憨的小学生。`;
+            console.log(joke);
+            p.innerHTML = joke;
+        }
+    </script>
+</body>
+</html>
