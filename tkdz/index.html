@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Battle Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        canvas {
+            display: none;
+            background-color: #f4f4f4;
+        }
+        .menu, .game-over {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu button, .game-over button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" id="mainMenu">
+        <button onclick="startSinglePlayer()">单人游戏</button>
+        <button onclick="startMultiPlayer()">多人游戏</button>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <div class="game-over" id="gameOverMenu" style="display: none;">
+        <h1>Game Over</h1>
+        <button onclick="restartGame()">重新开始</button>
+        <button onclick="goToMainMenu()">主菜单</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
