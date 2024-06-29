@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <style>
+        .content {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <button onclick="startCountdown()">点击开始倒计时</button>
+        <div id="countdown"></div>
+    </div>
+    <script>
+        var max = 10;
+        var countdownRunning = false;
+        async function foo() {
+            var countdownDiv = document.getElementById('countdown');
+            countdownDiv.innerHTML = '';
+
+            for (var i = max; i > 0; i--) {
+                var para = document.createElement('p');
+                para.textContent = i;
+                countdownDiv.appendChild(para);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+            countdownRunning = false;
+        }
+        function startCountdown() {
+            if (!countdownRunning) {
+                countdownRunning = true;
+                foo();
+            }
+        }
+    </script>
+</body>
+</html>
