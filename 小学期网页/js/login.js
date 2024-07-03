@@ -1,8 +1,15 @@
-// 定义用户和密码对象
-const users = {
-    'yx': '123',
-    'yxx': '123456'
-};
+// 从 localStorage 获取用户数据
+function getUsers() {
+    return JSON.parse(localStorage.getItem('users')) || {};
+}
+
+// 将用户数据存储到 localStorage
+function setUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+// 初始化用户数据
+const users = getUsers();
 
 // 登录表单提交事件处理
 document.getElementById('loginForm')?.addEventListener('submit', function(event) {
@@ -41,10 +48,10 @@ document.getElementById('registerForm')?.addEventListener('submit', function(eve
 
     // 注册成功逻辑
     users[username] = password;
+    setUsers(users);
     alert('注册成功！用户名: ' + username + '，邮箱: ' + email);
-    // 注册成功后可以自动填写到登录表单
-    document.getElementById('loginUsername').value = username;
-    document.getElementById('loginPassword').value = password;
+    // 跳转到登录页面
+    window.location.href = './denglu.html';
 });
 
 // 页面加载时检查登录状态
@@ -65,13 +72,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const highlightSection = document.getElementById('highlightSection');
     const items = highlightSection.querySelectorAll('.item');
 
-    window.addEventListener('scroll', function() {
-        const rect = highlightSection.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-            items.forEach(item => item.classList.add('active-item'));
-        } else {
-            items.forEach(item => item.classList.remove('active-item'));
-        }
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Adjust as necessary
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            const targetId = entry.target.id;
+            const targetNavItem = highlightSection.querySelector(`[href="#${targetId}"]`);
+
+            if (entry.isIntersecting) {
+                targetNavItem.classList.add('active-item');
+            } else {
+                targetNavItem.classList.remove('active-item');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    document.querySelectorAll('section[id]').forEach(section => {
+        observer.observe(section);
     });
 });
 
