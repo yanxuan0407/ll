@@ -5,136 +5,9 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
   <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/login.js"></script>
-  <style type="text/css">
-  
-    .header {
-      background-color: rgb(48, 49, 51) !important;
-      color: white;
-      padding: 3rem 8rem !important;
-      margin: 0 ! important;
-    }
-
-    .header h1 {
-      font-size: 24px;
-    }
-
-    .header p {
-      font-size: 21px !important;
-    }
-
-    .header p strong {
-      font-size: 14px;
-    }
-
-    .header p small {
-      font-size: 65%;
-    }
-
-    .header button {
-      width: 83px;
-      font-size: 12px;
-      padding: 2px 0;
-      margin: 0;
-    }
-
-    .header img {
-      height: 200px;
-    }
-
-    .header .thumbnail {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      width: 159px;
-      padding: 4px;
-    }
-
-    .content {
-      padding: 10px 100px;
-      width: 100%;
-    }
-
-    .content .my-btn {
-      width: 100%;
-      border-radius: 0%;
-    }
-
-    /* .content .my-btn:hover {
-        background-color: orange; 
-    } */
-
-    .content .my-btn button {
-      width: 100%;
-    }
-
-    .content .my-btn ul {
-      width: 100%;
-      opacity: 0.8;
-    }
-
-    .content .row>div {
-      padding: 10px;
-    }
-
-    .navber {
-      min-height: 30px;
-      line-height: 30px;
-      text-align: center;
-      height: 20px;
-      width: 100%;
-    }
-
-    .row {
-      margin-right: 50px;
-      margin-left:  60px;
-    }
-
-    .btn {
-      white-space: nowrap;
-      margin-left: 10px;
-    }
-
-    .form-control {
-      text-align: center;
-    }
-    .info{
-      padding-top: 10px;
-      margin-left: 50px;
-    }
-    span{
-      margin-left: 20px;
-    } 
-    /* .name,.score,.rank,.gscore{
-      text-align: left;
-    } */
-    h1{
-      font-size: 36px;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-family: inherit;
-      font-weight: 500;
-      line-height: 1.1;
-      color: inherit;
-    } 
-    .container-fluid{
-      position: fixed;
-      top: 0;
-      background-color: white;
-    }
-    .col-md-6{
-      z-index: 999;
-      position: fixed;
-      bottom: 0;
-
-    } 
-    .ans {
-      width: 50px;
-      height: 18px;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -142,13 +15,13 @@
     <div class="container-fluid">
       <a class="navbar-brand">快乐运算:)</a>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Eamil" aria-label="Search">
-        <input class="form-control me-2" type="search" placeholder="Password" aria-label="Search">
-        <button type="button" class="btn btn-success text-nowrap">Sign in</button>
+        <input class="form-control me-2" type="search" placeholder="Email" id="username" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="Password" id="password" aria-label="Search">
+        <button type="button" class="btn btn-success text-nowrap" id="sign_in">Sign in</button>
         <button type="button" class="btn btn-danger text-nowrap">Sign up</button>
       </form>
-    </div> 
-  </nav> 
+    </div>
+  </nav>
   <div class="p-5 mb-4 bg-light header">
     <div class="container py-5 row">
       <div class="left col-md-10">
@@ -178,34 +51,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>1+2</td>
-              <td><input class="ans form-control"></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>3+4</td>
-              <td><input class="ans form-control"></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>5+6</td>
-              <td><input class="ans form-control"></td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>1+2</td>
-              <td><input class="ans form-control"></td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>3+4</td>
-              <td><input class="ans form-control"></td>
-            </tr>
+            <!-- 动态生成题目 -->
           </tbody>
         </table>
-
         <button class="submit">提交</button>
       </div>
       <div id="post" class="col-md-5" style="height: 350px;background-color: rgb(79, 77, 77);margin-bottom: 20px;padding-top: 20px;">
@@ -222,12 +70,12 @@
           </ul>
         </div>
         <div class="info pd20">
-					<img src="images/logo.jpg" class="thumbnail" width="100em" height="100em" style="float:left">
-					<p class="name">姓名：尚未登陆</p>
-					<p class="score">分数：尚未登陆</p>
-					<p class="rank">排名：尚未登陆</p>
-					<p class="gscore">测试得分：</p>
-				</div>
+          <img src="images/logo.jpg" class="thumbnail" width="100em" height="100em" style="float:left">
+          <p class="name">姓名：尚未登陆</p>
+          <p class="score">分数：尚未登陆</p>
+          <p class="rank">排名：尚未登陆</p>
+          <p class="gscore">测试得分：</p>
+        </div>
         <div class="btn-group dropup my-btn">
           <button type="button" class="btn btn-warning" style="border-radius: 0%;margin: 50px;margin-left: 30px;color: white;margin-top: 20px;"
           data-bs-toggle="dropdown" aria-expanded="false">习题册
@@ -244,36 +92,38 @@
               <th>Rank</th>
             </tr>
           </thead>
-          <tr>
-            <th scope="row">1</th>
-            <td>张三</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>李四</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>王五</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>老六</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>老七</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>张三</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>李四</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>王五</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>老六</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>老七</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -284,69 +134,71 @@
   <nav class="navbar">
     <div class="row1">
       <div class="col-md-6 btn-success" style="min-height: 30px; line-height: 30px; text-align: center;background-color: green;">个人匹配</div>
-      <div class="col-md-6 btn-warning" style="min-height: 30px; line-height: 30px; text-align: center;background-color: orange;">多人对战</div> 
+      <div class="col-md-6 btn-warning" style="min-height: 30px; line-height: 30px; text-align: center;background-color: orange;">多人对战</div>
     </div>
   </nav>
-</body>
-<script type="text/javascript">  
-  console.log('begin');  
-  var btns = document.querySelector('.dropdown-menu').querySelectorAll('li');  
-  var quiz_list = []; 
-  for (var i = 0; i < btns.length; i++) {  
-    btns[i].addEventListener('click', showQuiz);  
-  }  
-  
-  var submit_btn = document.querySelector('.submit');  
-  submit_btn.addEventListener('click', () => {  
-    var quizNode = document.querySelector('#quiz');  
-    quizNode.style.display = 'none';  
-    var postNode = document.querySelector('#post');  
-    postNode.style.display = 'block';  
-  });  
-  
-  function showQuiz(event) {  
-    var difficulty = event.target.textContent || event.target.innerText;  
-    console.log('我点了，点的是谁？', difficulty);  
-    quiz_list = [];  
-  
-    for (var i = 0; i < 5; i++) {  
-      var quiz = generateQuiz();  
-      quiz_list.push(quiz); 
+  <script src="./js/login.js"></script>
+  <script src="./js/quiz.js"></script>
+  <script type="text/javascript">  
+    console.log('begin');  
+    var btns = document.querySelector('.dropdown-menu').querySelectorAll('li');  
+    var quiz_list = []; 
+    for (var i = 0; i < btns.length; i++) {  
+      btns[i].addEventListener('click', showQuiz);  
     }  
-  
-    console.log('生成的题目是', quiz_list);  
-  
-    var tableRows = document.querySelector('.table').querySelectorAll('tr');  
-    for (var i = 0; i < Math.min(tableRows.length, quiz_list.length); i++) {  
-     
-      var td = tableRows[i].querySelector('td');  
-      if (td) {  
     
-        td.innerText = quiz_list[i].join(' '); 
+    var submit_btn = document.querySelector('.submit');  
+    submit_btn.addEventListener('click', () => {  
+      var quizNode = document.querySelector('#quiz');  
+      quizNode.style.display = 'none';  
+      var postNode = document.querySelector('#post');  
+      postNode.style.display = 'block';  
+    });  
+    
+    function showQuiz(event) {  
+      var difficulty = event.target.textContent || event.target.innerText;  
+      console.log('我点了，点的是谁？', difficulty);  
+      quiz_list = [];  
+    
+      for (var i = 0; i < 5; i++) {  
+        var quiz = generateQuiz();  
+        quiz_list.push(quiz); 
       }  
-    }  
-  
-    var postNode = document.querySelector('#post');  
-    postNode.style.display = 'none';  
-    var quizNode = document.querySelector('#quiz');  
-    quizNode.style.display = 'block';  
-  }  
-  
-  function generateQuiz() {  
-    var quiz = [];  
-    for (var i = 0; i < 5; i++) {  
-      if (i % 2 == 0) {  
-        quiz.push(Math.round(Math.random() * 50));  
-      } else {  
-        quiz.push(generateOp());  
+    
+      console.log('生成的题目是', quiz_list);  
+    
+      var tableRows = document.querySelector('.table').querySelectorAll('tr');  
+      for (var i = 0; i < Math.min(tableRows.length, quiz_list.length); i++) {  
+       
+        var td = tableRows[i].querySelector('td');  
+        if (td) {  
+      
+          td.innerText = quiz_list[i].join(' '); 
+        }  
       }  
+    
+      var postNode = document.querySelector('#post');  
+      postNode.style.display = 'none';  
+      var quizNode = document.querySelector('#quiz');  
+      quizNode.style.display = 'block';  
     }  
-    return quiz; 
-  }  
-  
-  function generateOp() {  
-    var ops = ['+', '-', '*', '/'];  
-    return ops[Math.floor(Math.random() * 4)];  
-  }  
-</script>
+    
+    function generateQuiz() {  
+      var quiz = [];  
+      for (var i = 0; i < 5; i++) {  
+        if (i % 2 == 0) {  
+          quiz.push(Math.round(Math.random() * 50));  
+        } else {  
+          quiz.push(generateOp());  
+        }  
+      }  
+      return quiz; 
+    }  
+    
+    function generateOp() {  
+      var ops = ['+', '-', '*', '/'];  
+      return ops[Math.floor(Math.random() * 4)];  
+    }  
+  </script>
+</body>
 </html>

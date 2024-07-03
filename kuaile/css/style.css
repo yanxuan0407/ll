@@ -1,0 +1,121 @@
+.header {
+    background-color: rgb(48, 49, 51) !important;
+    color: white;
+    padding: 3rem 8rem !important;
+    margin: 0 !important;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+  }
+  
+  .header p {
+    font-size: 21px !important;
+  }
+  
+  .header p strong {
+    font-size: 14px;
+  }
+  
+  .header p small {
+    font-size: 65%;
+  }
+  
+  .header button {
+    width: 83px;
+    font-size: 12px;
+    padding: 2px 0;
+    margin: 0;
+  }
+  
+  .header img {
+    height: 200px;
+  }
+  
+  .header .thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 159px;
+    padding: 4px;
+  }
+  
+  .content {
+    padding: 10px 100px;
+    width: 100%;
+  }
+  
+  .content .my-btn {
+    width: 100%;
+    border-radius: 0%;
+  }
+  
+  .content .my-btn button {
+    width: 100%;
+  }
+  
+  .content .my-btn ul {
+    width: 100%;
+    opacity: 0.8;
+  }
+  
+  .content .row>div {
+    padding: 10px;
+  }
+  
+  .navber {
+    min-height: 30px;
+    line-height: 30px;
+    text-align: center;
+    height: 20px;
+    width: 100%;
+  }
+  
+  .row {
+    margin-right: 50px;
+    margin-left: 60px;
+  }
+  
+  .btn {
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+  
+  .form-control {
+    text-align: center;
+  }
+  
+  .info {
+    padding-top: 10px;
+    margin-left: 50px;
+  }
+  
+  span {
+    margin-left: 20px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+  }
+  
+  .container-fluid {
+    position: fixed;
+    top: 0;
+    background-color: white;
+  }
+  
+  .col-md-6 {
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  .ans {
+    width: 50px;
+    height: 18px;
+  }
