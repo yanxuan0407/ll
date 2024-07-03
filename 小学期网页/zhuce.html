@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+    <title>用户注册</title>
     <link rel="stylesheet" href="./css/register.css" />
 </head>
 <body>
@@ -45,30 +45,6 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var confirmPassword = document.getElementById('confirmPassword').value;
-            var email = document.getElementById('email').value;
-
-            if (password !== confirmPassword) {
-                alert('密码和确认密码不匹配，请重新输入。');
-                return;
-            }
-
-            alert('注册成功！用户名: ' + username + '，邮箱: ' + email);
-            // 这里可以添加进一步的处理逻辑，如发送数据到服务器
-        });
-
-        document.querySelector('.switch').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('.all').classList.add('fade-out');
-            setTimeout(function() {
-                window.location.href = event.target.closest('a').href;
-            }, 500);
-        });
-    </script>
+    <script src="./js/login.js"></script>
 </body>
 </html>
