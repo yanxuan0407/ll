@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/denglu.css" />
+</head>
+<body>
+    <div class="all">
+        <div class="log">
+            <div class="register">
+                <form id="loginForm">
+                    <div class="register-top-grid">
+                        <h3>用户登录</h3>
+                        <div class="input">
+                            <span>用户名 <label style="color: red">* </label></span>
+                            <input type="text" id="username" placeholder="请输入用户名" class="input-text" required />
+                        </div>
+                        <div class="input">
+                            <span>密码 <label style="color: red">*</label></span>
+                            <input type="password" id="password" placeholder="请输入密码" class="input-text" required />
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" value="提交" class="tijiao" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="reg">
+            <div class="reg_1">
+                <h2>没有账号？</h2>
+                <p>立即注册加入我们吧，和我们一起开启旅程吧</p>
+                <a href="./zhuce.html" class="switch">
+                    <button type="button" class="sig">注册</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert('请填写所有必填字段。');
+                return;
+            }
+
+            alert('登录成功！用户名: ' + username);
+            // 这里可以添加进一步的处理逻辑，如发送数据到服务器
+        });
+
+        document.querySelector('.switch').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.all').classList.add('fade-out');
+            setTimeout(function() {
+                window.location.href = event.target.closest('a').href;
+            }, 500);
+        });
+    </script>
+</body>
+</html>

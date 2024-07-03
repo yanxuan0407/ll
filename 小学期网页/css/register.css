@@ -1,0 +1,97 @@
+.all {
+    width: 800px;
+    box-shadow: -10px 10px 25px rgba(210, 210, 210, 0.9);
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    border-radius: 35px;
+    background-color: #ffffff;
+    height: 550px;
+    transition: opacity 1s ease-in-out;
+}
+.fade-out {
+    opacity: 0;
+}
+.log {
+    width: 50%;
+    margin: auto;
+}
+.reg {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    background-color: #20b2aa;
+    border-radius: 35px;
+    color: #ffffff;
+}
+.reg_1 {
+    text-align: center;
+    margin: auto;
+    margin-top: 50%;
+}
+.reg_1 h2 {
+    font-weight: 700;
+}
+.reg_1 p {
+    margin: 15px 0px 25px 0px;
+}
+.sig {
+    width: 70px;
+    height: 30px;
+    border-radius: 12px;
+    background-color: #20b2aa;
+    border-color: #fff;
+    color: #ffffff;
+}
+#tiao {
+    padding: 0em 0;
+}
+.reg_1 a {
+    color: #ffffff;
+}
+h3 {
+    font-size: 3em;
+    color: black;
+    padding-bottom: 1em;
+    margin: 0;
+    text-align: center;
+    font-family: "Marvel-Regular";
+}
+.input {
+    margin: 10px 50px;
+    width: 300px;
+    height: 70px;
+}
+span {
+    color: #999;
+    font-size: 0.85em;
+    padding-bottom: 0.2em;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.input-text {
+    border: 1px solid #555;
+    outline-color: #fd9f3e;
+    width: 90%;
+    font-size: 1em;
+    padding: 0.5em;
+    line-height: inherit;
+}
+.register-top-grid {
+    color: black;
+    padding-bottom: 1em;
+    margin: 0;
+    font-family: "Marvel-Regular";
+    margin: 10px 0;
+}
+.text-center {
+    text-align: center;
+}
+.tijiao {
+    color: rgb(255, 253, 253);
+    width: 80px;
+    height: 35px;
+    background-color: rgb(241, 52, 10);
+    border: none;
+}
