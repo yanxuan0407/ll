@@ -34,6 +34,8 @@
             padding-top: 20px;
             padding-bottom: 20px;
             background-color:#cab9b9;
+            border-top-left-radius: 35px;
+            border-top-right-radius: 35px;
         }
         .col-md-12{
             width: 100%;
@@ -58,6 +60,17 @@
             transform: translateX(-50%);
             margin-top: -30px;
         }
+        .huanying{
+            background-color: #bd14144d;
+            color: white;
+            width: 285px;
+            height: 42px;
+            margin-left: 125px;
+            border-radius: 15px;
+        }
+        .active-item {
+            border-bottom: 3px solid blue;
+        }
     </style>
 </head>
 <body>
@@ -80,25 +93,26 @@
                         <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
                     </a>
                 </div>
-                <div id="welcomeMessage" class="text-center text-md-left mt-5" style="display: none;">
+                <div id="welcomeMessage" class="text-center text-md-left mt-5 huanying" style="display: none;">
                     <h2>欢迎您的到来：<span id="welcomeUsername"></span></h2>
+                    <button id="logoutButton">退出</button>
                 </div>
             </div>
         </div>
     </section>
-    <div class="container boxflay">
+    <div class="container boxflay" id="highlightSection">
         <div class="row">
             <div class="col-md-12">
                 <div class="box">
-                    <a class="item">工作室环境</a>
-                    <a class="item">工作室环境</a>
-                    <a class="item">工作室环境</a>
-                    <a class="item">工作室环境</a>
+                    <a class="item" href="#section1">我们工作室的环境</a>
+                    <a class="item" href="#section2">加入我们的优点</a>
+                    <a class="item" href="#section3">我们师资教育</a>
+                    <a class="item" href="#section4">我们的配置</a>
                 </div>
             </div>
         </div>
     </div>
-    <section class="slice slice-lg pt-lg-6 pb-0 pb-lg-6 bg-section-secondary">
+    <section id="section1" class="slice slice-lg pt-lg-6 pb-0 pb-lg-6 bg-section-secondary">
         <div class="container">
             <div class="row mb-5 justify-content-center text-center" style="margin-top: 48px;">
                 <div class="col-lg-6">
@@ -106,6 +120,156 @@
                         Get started
                     </span>
                     <h2 class="mt-4 text-primary"><strong>我们工作室的环境</strong></h2>
+                    <div class="mt-2">
+                        <p class="lead lh-180">The environment of our studio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/hj1.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Unleash your creativity</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/hj2.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Get more results</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/hj3.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Increase your audience</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="section2" class="slice slice-lg pt-lg-6 pb-0 pb-lg-6 bg-section-secondary">
+        <div class="container">
+            <div class="row mb-5 justify-content-center text-center" style="margin-top: 48px;">
+                <div class="col-lg-6">
+                    <span class="badge badge-soft-success badge-pill badge-lg">
+                        Get started
+                    </span>
+                    <h2 class="mt-4 text-primary"><strong>加入我们的优点</strong></h2>
+                    <div class="mt-2">
+                        <p class="lead lh-180">The environment of our studio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/jsf.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Unleash your creativity</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/ct.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Get more results</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/bgl.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Increase your audience</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="section3" class="slice slice-lg pt-lg-6 pb-0 pb-lg-6 bg-section-secondary">
+        <div class="container">
+            <div class="row mb-5 justify-content-center text-center" style="margin-top: 48px;">
+                <div class="col-lg-6">
+                    <span class="badge badge-soft-success badge-pill badge-lg">
+                        Get started
+                    </span>
+                    <h2 class="mt-4 text-primary"><strong>我们师资教育</strong></h2>
+                    <div class="mt-2">
+                        <p class="lead lh-180">The environment of our studio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/ls1.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Unleash your creativity</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/ls2.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Get more results</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="./img/ls3.jpg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 mb-3">Increase your audience</h5>
+                            <p class="text-muted mb-0">Quick Website UI Kit (FREE) contains components and pages that are easy to customize and change.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="section4" class="slice slice-lg pt-lg-6 pb-0 pb-lg-6 bg-section-secondary">
+        <div class="container">
+            <div class="row mb-5 justify-content-center text-center" style="margin-top: 48px;">
+                <div class="col-lg-6">
+                    <span class="badge badge-soft-success badge-pill badge-lg">
+                        Get started
+                    </span>
+                    <h2 class="mt-4 text-primary"><strong>我们的配置</strong></h2>
                     <div class="mt-2">
                         <p class="lead lh-180">The environment of our studio</p>
                     </div>
@@ -148,6 +312,7 @@
             </div>
         </div>
     </section>
+    <script src="./js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const username = localStorage.getItem('username');
@@ -156,6 +321,34 @@
                 document.getElementById('welcomeMessage').style.display = 'block';
                 document.getElementById('welcomeUsername').textContent = username;
             }
+
+            const highlightSection = document.getElementById('highlightSection');
+            const items = highlightSection.querySelectorAll('.item');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Adjust as necessary
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    const targetId = entry.target.id;
+                    const targetNavItem = highlightSection.querySelector(`[href="#${targetId}"]`);
+
+                    if (entry.isIntersecting) {
+                        targetNavItem.classList.add('active-item');
+                    } else {
+                        targetNavItem.classList.remove('active-item');
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            document.querySelectorAll('section[id]').forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
